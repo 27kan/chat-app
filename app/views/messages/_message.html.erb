@@ -4,7 +4,8 @@
         <%= message.user.name %>
       </div>
       <div class="message-date">
-        <%= message.created_at %>
+        <%= l message.created_at %>
+        <!-- lメソッドは、日付や時刻を表示するメソッド -->
       </div>
     </div>
     <div class="lower-message">
