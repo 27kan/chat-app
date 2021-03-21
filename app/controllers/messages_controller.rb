@@ -2,6 +2,8 @@ class MessagesController < ApplicationController
   def index
     @room = Room.find(params[:room_id])
     @message = Message.new
+    @messages = @room.messages.includes(:user)
+    # user.nameを表示するからuserモデルと紐付ける
   end
 
   def create
@@ -10,6 +12,8 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to room_messages_path(@room)
     else
+      @messages = @room.messages.includes(:user)
+      # 投稿に失敗してもrenderでmessagesを表示するため
       render :index
     end
   end
