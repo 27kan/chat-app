@@ -1,0 +1,16 @@
+  <div class="message">
+    <div class="upper-message">
+      <div class="message-user">
+        <%= message.user.name %>
+      </div>
+      <div class="message-date">
+        <%= l message.created_at %>
+        <!-- lメソッドは、日付や時刻を表示するメソッド -->
+      </div>
+    </div>
+    <div class="lower-message">
+      <div class="message-content">
+        <%= message.content %>
+      </div>
+    </div>
+  </div>
